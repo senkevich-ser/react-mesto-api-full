@@ -1,0 +1,15 @@
+.lead__titles {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1080px) {
+  .lead__titles {
+    margin-bottom: 36px;
+  }
+}
+@media (max-width: 786px) {
+  .lead__titles {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,10 @@
+.foto-grid__name {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  background-color: #ffffff;
+  padding-left: 21px;
+  padding-right: 20px;
+  align-items: center;
+  border-radius: 0px 0px 10px 10px;
+}

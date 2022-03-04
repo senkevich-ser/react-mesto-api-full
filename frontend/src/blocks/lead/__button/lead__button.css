@@ -1,0 +1,19 @@
+.lead__button {
+  display: flex;
+  width: 150px;
+  height: 50px;
+  outline: solid white 1px;
+  background-color: #000000;
+  background-image: url(../../../images/cross.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 2px;
+  border: black solid 15px;
+}
+
+@media (max-width: 1080px) {
+  .lead__button {
+    width: 282px;
+  }
+}

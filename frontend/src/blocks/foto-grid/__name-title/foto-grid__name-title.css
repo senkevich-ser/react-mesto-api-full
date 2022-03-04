@@ -1,0 +1,10 @@
+.foto-grid__name-title {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+}
+@media (max-width: 1243px) {
+  .foto-grid__name-title {
+    max-width: none;
+  }
+}

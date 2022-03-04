@@ -1,0 +1,4 @@
+.foto-grid__likesBlock {
+  display: flex;
+  flex-direction: column;
+}

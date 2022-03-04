@@ -1,0 +1,9 @@
+.header__button {
+  color: #e5e5e5;
+  background-color: inherit;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: right;
+  border: none;
+  text-decoration: none;
+}

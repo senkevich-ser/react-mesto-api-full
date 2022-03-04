@@ -1,0 +1,12 @@
+.content {
+  background-color: #000000;
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 420px) {
+  .content {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+}

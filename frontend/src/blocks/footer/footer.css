@@ -1,0 +1,17 @@
+.footer {
+  background-color: #000000;
+  position: relative;
+  color: #ffffff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 880px;
+  min-width: 320px;
+  padding: 67px 0 60px;
+}
+@media (max-width: 420px) {
+  .footer {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+}

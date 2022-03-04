@@ -1,0 +1,22 @@
+.lead__pencil {
+  /* display: block; */
+  width: 24px;
+  height: 24px;
+  outline: white solid 1px;
+  border: black solid 5px;
+  background-color: black;
+  margin-left: 18px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  background-image: url(../../../images/Vector@1.svg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 786px) {
+  .lead__pencil {
+    margin-left: 10px;
+    width: 18px;
+    height: 18px;
+  }
+}

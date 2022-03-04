@@ -1,0 +1,14 @@
+.foto-grid {
+  background-color: #000000;
+  padding-top: 47px;
+  display: -ms-grid;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  /* grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, 282px);
+  grid-auto-rows: minmax(213px, auto);
+  gap: 17px;
+  max-width: 880px;
+  margin: 0 auto;
+}

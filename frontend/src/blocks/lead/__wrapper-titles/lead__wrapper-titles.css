@@ -1,0 +1,18 @@
+.lead__wrapper-titles {
+  padding-left: 50px;
+}
+@media (max-width: 910px) {
+  .lead__wrapper-titles {
+    padding-left: 45px;
+  }
+}
+@media (max-width: 768px) {
+  .lead__wrapper-titles {
+    padding-left: 35px;
+  }
+}
+@media (max-width: 680px) {
+  .lead__wrapper-titles {
+    padding-left: 25px;
+  }
+}

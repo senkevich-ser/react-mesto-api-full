@@ -1,0 +1,14 @@
+.lead {
+  display: flex;
+  flex-direction: row;
+  background-color: #000000;
+  padding-top: 36px;
+  color: #ffffff;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 1080px) {
+  .lead {
+    flex-direction: column;
+  }
+}

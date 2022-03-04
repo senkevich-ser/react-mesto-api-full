@@ -1,0 +1,44 @@
+.root {
+  min-width: 320px;
+  max-width: 1280px;
+  padding-left: 200px;
+  padding-right: 200px;
+  margin: 0 auto;
+  background-color: #000000;
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+}
+
+@media (max-width: 1180px) {
+  .root {
+    padding-left: 170px;
+    padding-right: 170px;
+  }
+}
+@media (max-width: 1080px) {
+  .root {
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+}
+@media (max-width: 880px) {
+  .root {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+@media (max-width: 768px) {
+  .root {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 420px) {
+  .root {
+    padding: 0;
+  }
+}

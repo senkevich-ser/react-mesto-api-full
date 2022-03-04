@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  background-color: #000000;
+  max-width: 880px;
+  min-width: 320px;
+  border-bottom: #545454 solid 1px;
+}
+
+@media (max-width: 420px) {
+  .header {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+}

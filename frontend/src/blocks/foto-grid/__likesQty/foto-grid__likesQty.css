@@ -1,0 +1,12 @@
+.foto-grid__likesQty {
+  background-color: #ffffff;
+  align-items: flex-end;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  width: 100%;
+  height: 13px;
+}
