@@ -1,0 +1,38 @@
+{
+  "name": "express-mesto",
+  "version": "1.0.0",
+  "description": "backend&frontend for mesto",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "lint": "npx eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senkevich-ser/express-mesto.git"
+  },
+  "author": "Siarhey Senkevich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/senkevich-ser/express-mesto/issues"
+  },
+  "homepage": "https://github.com/senkevich-ser/express-mesto#readme",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "celebrate": "^15.0.1",
+    "express": "^4.17.2",
+    "express-winston": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "lint": "^0.7.0",
+    "mongoose": "^6.2.1",
+    "validator": "^13.7.0",
+    "winston": "^3.6.0"
+  }
+}
