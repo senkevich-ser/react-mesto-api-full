@@ -1,0 +1,21 @@
+.login__input-text {
+  background-color: inherit;
+  width: 358px;
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  color: #cccccc;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+}
+@media (max-width: 570px) {
+  .login__input-text {
+    width: 290px;
+  }
+}
+@media (max-width: 470px) {
+  .login__input-text {
+    width: 238px;
+  }
+}

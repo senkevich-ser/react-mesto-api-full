@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3495b0c1.chunk.css",
+    "main.js": "/static/js/main.6e9ce830.chunk.js",
+    "main.js.map": "/static/js/main.6e9ce830.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3e6eca41.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3e6eca41.js.map",
+    "static/js/2.d89a2494.chunk.js": "/static/js/2.d89a2494.chunk.js",
+    "static/js/2.d89a2494.chunk.js.map": "/static/js/2.d89a2494.chunk.js.map",
+    "static/js/3.a70c9c9b.chunk.js": "/static/js/3.a70c9c9b.chunk.js",
+    "static/js/3.a70c9c9b.chunk.js.map": "/static/js/3.a70c9c9b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.3495b0c1.chunk.css.map": "/static/css/main.3495b0c1.chunk.css.map",
+    "static/js/2.d89a2494.chunk.js.LICENSE.txt": "/static/js/2.d89a2494.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/urn.2af49b82.svg",
+    "static/media/Union.8d0172c8.jpg": "/static/media/Union.8d0172c8.jpg",
+    "static/media/logo_russia.bbe2a6ea.svg": "/static/media/logo_russia.bbe2a6ea.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3e6eca41.js",
+    "static/js/2.d89a2494.chunk.js",
+    "static/css/main.3495b0c1.chunk.css",
+    "static/js/main.6e9ce830.chunk.js"
+  ]
+}

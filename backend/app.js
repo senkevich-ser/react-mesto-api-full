@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const { errors } = require('celebrate');
+const cors = require('cors');
+const path = require('path');
 const { createUser, userLogin } = require("./controllers/users");
 const cardRoutes = require("./routes/cards");
 const userRoutes = require("./routes/users");
@@ -14,8 +16,10 @@ const { PORT = 3000 } = process.env;
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.use(requestLogger);
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/crash-test', () => {
   setTimeout(() => {

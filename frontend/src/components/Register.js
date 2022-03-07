@@ -1,70 +1,40 @@
 import React, { useState } from "react";
-import "./Login.css";
 import Header from "./landing/Header.js";
-import InfoTooltip from "./InfoTooltip";
-import { Link, withRouter } from "react-router-dom";
-import * as auth from "../utils/auth";
-import succesImage from "../images/Union(black).jpg";
-import unSuccesImage from "../images/Union.jpg";
+import { Link} from "react-router-dom";
 
-function Register({ history }) {
-  const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = useState(false);
-  const [resultMessage, setResultMessage] = useState({ image: null, text: "" });
+
+function Register({handleRegister }) {
+  
   const [inputValues, setInputValues] = useState({});
 
-  function resetForm() {
+  function handleChange(e) {
+    setInputValues({...inputValues,[e.target.name]: e.target.value });
+  }
+  
+
+  function resetForm(){
     setInputValues({});
   }
 
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setInputValues({ ...inputValues, [name]: value });
-  }
   function handleSubmit(e) {
     e.preventDefault();
-    let messageText = "";
-    let imageLink = null;
-
-    auth
-      .register(inputValues.email, inputValues.password)
-      .then((res) => {
-        resetForm();
-        history.push("/sign-in");
-        messageText = "Вы успешно зарегистрировались!";
-        imageLink = succesImage;
-      })
-      .catch((err) => {
-        switch (err) {
-          case 400:
-            messageText = "Ошибка 400, некорректно заполнено одно из полей";
-            imageLink = unSuccesImage;
-            break;
-          default:
-            messageText = "Что-то пошло не так! Попробуйте ещё раз.";
-            imageLink = unSuccesImage;
-        }
-      })
-      .finally(() => {
-        setResultMessage({ image: imageLink, text: messageText });
-        console.log(messageText);
-        setIsInfoTooltipPopupOpen(true);
-      });
+    if ( !inputValues.email || !inputValues.password ) {
+      return;
+    }
+    handleRegister(inputValues.email, inputValues.password,resetForm,inputValues)
+  
   }
+
+
   return (
     <>
       <Header>
-        <Link className="header__button opacity" to="/main">
+        <div><Link className="header__button opacity" to="/main">
           Войти
         </Link>
+        </div>
       </Header>
-      {isInfoTooltipPopupOpen && (
-        <InfoTooltip
-          onClose={setIsInfoTooltipPopupOpen(false)}
-          imageLink={resultMessage.image}
-          textMessage={resultMessage.text}
-        />
-      )}
-      <div className="popup__login">
+      <div className="login__popup">
         <h2 className="login__title">Регистрация</h2>
         <form
           className="popup__inputs"
@@ -82,6 +52,8 @@ function Register({ history }) {
               minLength="5"
               maxLength="40"
               onChange={handleChange}
+              value={inputValues.email || ''}
+              
             />
             <span className="initial-input-error popup__error"></span>
             <input
@@ -95,6 +67,7 @@ function Register({ history }) {
               minLength="2"
               maxLength="8"
               onChange={handleChange}
+              value={inputValues.password || ''}
             />
             <span className="rank-input-error popup__error"></span>
           </fieldset>
@@ -105,9 +78,9 @@ function Register({ history }) {
           >
             Зарегистрироваться
           </button>
-          <div className="register__question">
+          <div className="login__question">
             Вы уже зарегистрированы?
-            <Link className="register__entryButton opacity" to="/main">
+            <Link className="login__entryButton opacity" to="/main">
               Войти
             </Link>
           </div>
@@ -117,4 +90,4 @@ function Register({ history }) {
   );
 }
 
-export default withRouter(Register);
+export default Register;

@@ -4,6 +4,7 @@
   max-width: 880px;
   min-width: 320px;
   border-bottom: #545454 solid 1px;
+  justify-content: space-between;
 }
 
 @media (max-width: 420px) {

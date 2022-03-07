@@ -1,0 +1,12 @@
+.login__entryButton {
+  margin-left: 5px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16.94px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+.login__entryButton:hover {
+  cursor: pointer;
+}

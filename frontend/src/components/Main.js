@@ -1,8 +1,9 @@
 import React from "react";
 import Card from "./Card.js";
 import Header from "./landing/Header.js";
+import NavMenu from "./NavMenu";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
-import { Link } from "react-router-dom";
+
 
 function Main({
   onEditProfile,
@@ -12,15 +13,14 @@ function Main({
   cards,
   onCardLike,
   onCardDelete,
+  userMail
 }) {
   const currentUser = React.useContext(CurrentUserContext);
 
   return (
     <>
       <Header>
-        <Link className="header__button opacity" to="/sign-in">
-          Выйти
-        </Link>
+     <NavMenu userMail={userMail}/> 
       </Header>
       <main className="content">
         <section className="lead">
