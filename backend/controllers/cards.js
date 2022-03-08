@@ -65,7 +65,7 @@ exports.likeCard = async (req, res, next) => {
       { new: true },
     );
     if (card) {
-      return res.status(STATUS_OK).send({ data: card });
+      return res.status(STATUS_OK).send( card );
     }
     throw new NotFoundErr("Данная карточка не существует");
   } catch (err) {
@@ -84,7 +84,7 @@ exports.dislikeCard = async (req, res, next) => {
       { new: true },
     );
     if (card) {
-      return res.status(STATUS_OK).send({ data: card });
+      return res.status(STATUS_OK).send(card);
     }
     throw new NotFoundErr("Данная карточка не существует");
   } catch (err) {

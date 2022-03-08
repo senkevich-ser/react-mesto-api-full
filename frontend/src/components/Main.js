@@ -33,12 +33,12 @@ function Main({
             ></button>
             <img
               className="lead__image"
-              src={currentUser.avatar}
+              src={currentUser.data.avatar}
               alt="Фото пользователя"
             />
             <div className="lead__wrapper-titles">
               <div className="lead__wrapper-title">
-                <h1 className="lead__title title-cutter">{currentUser.name}</h1>
+                <h1 className="lead__title title-cutter">{currentUser.data.name}</h1>
                 <button
                   aria-label="Внести изменения в форму"
                   type="button"
@@ -47,7 +47,7 @@ function Main({
                 ></button>
               </div>
               <p className="lead__subtitle title-cutter margin">
-                {currentUser.about}
+                {currentUser.data.about}
               </p>
             </div>
           </div>
