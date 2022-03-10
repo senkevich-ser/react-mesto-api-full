@@ -35,13 +35,25 @@ function App() {
   const [userMail, setUserMail] = useState('')
   const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = useState(false);
   const [resultMessage, setResultMessage] = useState({});
+  const [token, setToken] = useState('1233');
+
+  function getUserToken() {
+    const userToken = `Bearer ${localStorage.getItem('jwt')}`;
+    if (userToken) {
+      setToken(userToken);
+    }
+  }
+  useEffect(() => {
+    getUserToken()
+  }, [])
+
 
   useEffect(() => {
     if (loggedIn) {
       setIsLoading(true);
       Promise.all([api
-        .getInfoAboutUser(), api
-          .getCards()]).then(([currentUserData, cards]) => {
+        .getInfoAboutUser(token), api
+          .getCards(token)]).then(([currentUserData, cards]) => {
             setCurrentUser(currentUserData);
             setCards(cards);
             setIsLoading(false);
@@ -49,14 +61,14 @@ function App() {
             console.log(`Ошибка при получении данных профиля: ${err}`);
           });
     }
-  }, [loggedIn]);
+  }, [loggedIn, token]);
 
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
     const isLiked = card.likes.some((i) => i === currentUser._id);
     // Отправляем запросы в API и получаем обновлённые данные карточки
     api
-      .changeLikeCardStatus(card._id, isLiked)
+      .changeLikeCardStatus(card._id, isLiked, token)
       .then((newCardSomeLike) => {
         setCards((state) =>
           state.map((c) => (c._id === card._id ? newCardSomeLike : c))
@@ -70,7 +82,7 @@ function App() {
     // Отправляется запрос в API и получаю массив, без удалённойкарточки
     e.preventDefault();
     api
-      .deleteCard(deleteCard._id)
+      .deleteCard(deleteCard._id, token)
       .then(() => {
         setCards((state) => state.filter((c) => c._id !== deleteCard._id));
         closeAllPopups();
@@ -113,7 +125,7 @@ function App() {
   }
   function handleUpdateUser({ name, about }) {
     api
-      .setInfoAboutUser({ name, about })
+      .setInfoAboutUser({ name, about }, token)
       .then((currentUserData) => {
         setCurrentUser(currentUserData);
         closeAllPopups();
@@ -124,7 +136,7 @@ function App() {
   }
   function handleUpdateAvatar({ avatar }, onSuccess) {
     api
-      .setAvatarUser({ avatar })
+      .setAvatarUser({ avatar }, token)
       .then((currentUserData) => {
         setCurrentUser(currentUserData);
         onSuccess();
@@ -136,7 +148,7 @@ function App() {
   }
   function handleAddPlaceSubmit({ name, link }) {
     api
-      .addCard({ name, link })
+      .addCard({ name, link }, token)
       .then((newCard) => {
         setCards([newCard, ...cards]);
         closeAllPopups();
@@ -172,8 +184,9 @@ function App() {
     auth.authorize(email, password, resetForm)
       .then((data) => {
         resetForm();
-        setLoggedIn(true)
         localStorage.setItem('jwt', data.token);
+        setToken(`Bearer ${data.token}`);
+        setLoggedIn(true);
         history.push('/main');
 
       })
@@ -202,7 +215,7 @@ function App() {
 
   useEffect(() => {
     tokenCheck();
-  }, [loggedIn, tokenCheck]);
+  }, [loggedIn, token, tokenCheck]);
 
 
   return isLoading ? (
