@@ -20,7 +20,7 @@ function Main({
   return (
     <>
       <Header>
-     <NavMenu userMail={userMail}/> 
+        <NavMenu userMail={userMail} />
       </Header>
       <main className="content">
         <section className="lead">
@@ -33,12 +33,12 @@ function Main({
             ></button>
             <img
               className="lead__image"
-              src={currentUser.data.avatar}
+              src={currentUser.avatar}
               alt="Фото пользователя"
             />
             <div className="lead__wrapper-titles">
               <div className="lead__wrapper-title">
-                <h1 className="lead__title title-cutter">{currentUser.data.name}</h1>
+                <h1 className="lead__title title-cutter">{currentUser.name}</h1>
                 <button
                   aria-label="Внести изменения в форму"
                   type="button"
@@ -47,7 +47,7 @@ function Main({
                 ></button>
               </div>
               <p className="lead__subtitle title-cutter margin">
-                {currentUser.data.about}
+                {currentUser.about}
               </p>
             </div>
           </div>

@@ -37,21 +37,23 @@ function App() {
   const [resultMessage, setResultMessage] = useState({});
 
   useEffect(() => {
-    setIsLoading(true);
-    Promise.all([api
-      .getInfoAboutUser(), api
-        .getCards()]).then(([currentUserData, cards]) => {
-          setCurrentUser(currentUserData);
-          setCards(cards);
-          setIsLoading(false);
-        }).catch((err) => {
-          console.log(`Ошибка при получении данных профиля: ${err}`);
-        });
-  }, []);
+    if (loggedIn) {
+      setIsLoading(true);
+      Promise.all([api
+        .getInfoAboutUser(), api
+          .getCards()]).then(([currentUserData, cards]) => {
+            setCurrentUser(currentUserData);
+            setCards(cards);
+            setIsLoading(false);
+          }).catch((err) => {
+            console.log(`Ошибка при получении данных профиля: ${err}`);
+          });
+    }
+  }, [loggedIn]);
 
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some((i) => i === currentUser.data._id);
+    const isLiked = card.likes.some((i) => i === currentUser._id);
     // Отправляем запросы в API и получаем обновлённые данные карточки
     api
       .changeLikeCardStatus(card._id, isLiked)
@@ -189,7 +191,7 @@ function App() {
       auth.checkToken(jwt).then((res) => {
         if (res) {
           setLoggedIn(true)
-          setUserMail(res.data.email)
+          setUserMail(res.email)
           history.push("/main")
         }
       }).catch((err) => {
