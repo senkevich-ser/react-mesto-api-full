@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3000";
+export const BASE_URL = "http://api.siarhey.nomoredomains.work";
 
 export function handleResponse(res) {
   if (res.ok) return res.json();
