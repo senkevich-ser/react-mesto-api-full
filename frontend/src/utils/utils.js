@@ -1,2 +1,2 @@
-const url = "http://api.siarhey.nomoredomains.work/";
+const url = "https://api.siarhey.nomoredomains.work/";
 export { url };

@@ -25,7 +25,7 @@ exports.createCard = async (req, res, next) => {
     if (!newCard) {
       throw new BadRequestErr("Переданы некорректные данные");
     }
-    return res.status(STATUS_CREATED).send({ data: newCard });
+    return res.status(STATUS_CREATED).send(newCard);
   } catch (err) {
     if (err.name.includes("ValidationError")) {
       return next(new BadRequestErr(`${Object.values(err.errors).map((error) => error.message).join(', ')}`));
@@ -65,7 +65,7 @@ exports.likeCard = async (req, res, next) => {
       { new: true },
     );
     if (card) {
-      return res.status(STATUS_OK).send( card );
+      return res.status(STATUS_OK).send(card);
     }
     throw new NotFoundErr("Данная карточка не существует");
   } catch (err) {
